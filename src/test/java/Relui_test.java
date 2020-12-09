@@ -13,7 +13,6 @@ import org.junit.Assert;
 
 public class Relui_test {
 
-    public static String expectedResult = "COMPLIMENTI! СУПЕРОБЪЕМНАЯ" ;
     WebDriver driver = new EdgeDriver();
 
     @Before()
@@ -30,7 +29,7 @@ public class Relui_test {
         WebElement goToCart = waitForElementLocatedBy(driver, By.linkText("Перейти в корзину"));
         goToCart.click();
 
-        Assert.assertFalse("Ваша корзина пуста.", !driver.findElement(By.xpath("//*[@id=\"cart-block\"]/div/div")).isDisplayed());
+        Assert.assertTrue(waitForElementLocatedBy(driver,By.xpath("//div[@datatype=\"4810438013055\"]")).isDisplayed());
 
     }
 
